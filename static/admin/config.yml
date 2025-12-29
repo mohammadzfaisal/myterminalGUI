@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: mohammadzfaisal/myterminalGUI
   branch: main
 
 media_folder: "static/images"
