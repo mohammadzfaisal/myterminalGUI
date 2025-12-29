@@ -66,3 +66,15 @@ collections:
               - {label: "Date", name: "date", widget: "date"}
               - {label: "Category", name: "category", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+
+  # About Page Manager
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "content/about/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
