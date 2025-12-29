@@ -1,0 +1,4 @@
+/* Custom color overrides for terminal theme */
+:root {
+  --background: #1e1e1e;
+}
