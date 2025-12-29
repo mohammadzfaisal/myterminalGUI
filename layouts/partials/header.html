@@ -1,0 +1,23 @@
+<header class="header" style="
+  border-bottom: 1px solid #333;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+  background: #1e1e1e;
+">
+  <div class="header__inner" style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+  ">
+    <!-- Desktop Navigation -->
+    {{ if len $.Site.Menus }}
+      {{ partial "menu.html" . }}
+    {{ end }}
+
+    <!-- Mobile Menu -->
+    {{ if len $.Site.Menus }}
+      {{ partial "mobile-menu.html" . }}
+    {{ end }}
+  </div>
+</header>

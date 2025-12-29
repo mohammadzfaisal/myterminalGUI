@@ -1,0 +1,54 @@
+<nav class="navigation-menu" style="display: flex; justify-content: center;">
+  <ul class="navigation-menu__inner menu--desktop" style="
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    align-items: center;
+  ">
+    {{ range $.Site.Menus.main }}
+      {{ if not .HasChildren }}
+        <li style="margin: 0;">
+          <a href="{{ .URL }}" {{ if .Params.NewTab -}} target="_blank" {{- end }} style="
+            text-decoration: none;
+            color: #f8f8f2;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            letter-spacing: 0.3px;
+          " class="menu-link">{{ .Name }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+    <!-- Search Icon -->
+    <li style="margin: 0;">
+      <a href="/search" style="
+        display: flex;
+        align-items: center;
+        color: #888;
+        transition: color 0.2s ease;
+      " class="menu-link search-icon" title="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .menu-link:hover,
+  .navigation-menu a:hover,
+  .menu--desktop a:hover {
+    color: #da7756 !important;
+  }
+
+  /* Hide desktop menu on mobile */
+  @media (max-width: 768px) {
+    .menu--desktop {
+      display: none !important;
+    }
+  }
+</style>

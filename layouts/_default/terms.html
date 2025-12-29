@@ -1,0 +1,125 @@
+{{ define "main" }}
+<div class="posts">
+  <!-- Page Header -->
+  <div style="text-align: center; margin-bottom: 2.5rem;">
+    <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: #f5f5f5; font-weight: 600;">Tags</h1>
+    <p style="color: #888; font-size: 0.95rem;">
+      Browse content by topic
+    </p>
+  </div>
+
+  {{ with .Content }}
+    <div class="index-content" style="margin-bottom: 2rem;">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  {{ $type := .Type }}
+  {{ $terms := .Data.Terms.Alphabetical }}
+
+  {{ if $terms }}
+  <!-- Tags Count -->
+  <div style="text-align: center; margin-bottom: 2rem;">
+    <span style="
+      display: inline-block;
+      padding: 6px 16px;
+      background: #252525;
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: #888;
+      font-size: 0.85rem;
+    ">
+      {{ len $terms }} tags
+    </span>
+  </div>
+
+  <!-- Tags Cloud -->
+  <div style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 800px;
+    margin: 0 auto;
+  ">
+    {{ range $terms }}
+      {{ $name := .Name }}
+      {{ $count := .Count }}
+      {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+        <a href="{{ .Permalink }}" class="tag-item" style="
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 10px 16px;
+          background: #252525;
+          border: 1px solid #333;
+          border-radius: 6px;
+          text-decoration: none;
+          transition: all 0.2s ease;
+        ">
+          <span style="color: #ccc; font-weight: 500;">{{ .Name }}</span>
+          <span style="
+            background: #1e1e1e;
+            color: #888;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+          ">{{ $count }}</span>
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <!-- Browse All Link -->
+  <div style="text-align: center; margin-top: 2.5rem;">
+    <a href="/posts" style="
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid #444;
+      color: #ccc;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    " class="browse-all-btn">
+      View All Posts
+      <span>→</span>
+    </a>
+  </div>
+
+  {{ else }}
+  <div style="text-align: center; padding: 3rem 0;">
+    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏷️</div>
+    <p style="color: #888; font-size: 1rem;">No tags found</p>
+    <p style="color: #555; font-size: 0.9rem;">Tags will appear when you add them to your posts</p>
+  </div>
+  {{ end }}
+</div>
+
+<style>
+  .tag-item:hover {
+    border-color: #da7756;
+    background: #2a2a2a;
+  }
+
+  .tag-item:hover span:first-child {
+    color: #da7756;
+  }
+
+  .browse-all-btn:hover {
+    border-color: #666;
+    color: #f5f5f5;
+  }
+
+  @media (max-width: 768px) {
+    .tag-item {
+      padding: 8px 14px !important;
+    }
+  }
+</style>
+
+{{ end }}

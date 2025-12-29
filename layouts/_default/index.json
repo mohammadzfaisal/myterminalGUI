@@ -1,0 +1,38 @@
+{{- $index := slice -}}
+{{- range where .Site.RegularPages "Type" "not in" (slice "page") -}}
+  {{- $entry := dict
+    "title" .Title
+    "url" .Permalink
+    "date" (.Date.Format "Jan 2, 2006")
+    "content" (.Plain | truncate 300)
+    "summary" (or .Description (.Summary | plainify | truncate 200))
+    "section" .Section
+    "tags" .Params.tags
+  -}}
+  {{- $index = $index | append $entry -}}
+{{- end -}}
+{{- range .Site.Data.data.projects -}}
+  {{- $entry := dict
+    "title" .title
+    "url" (printf "/projects/%s" .id)
+    "date" ""
+    "content" .description
+    "summary" .description
+    "section" "projects"
+    "tags" (slice)
+  -}}
+  {{- $index = $index | append $entry -}}
+{{- end -}}
+{{- range .Site.Data.data.blogs -}}
+  {{- $entry := dict
+    "title" .title
+    "url" (printf "/posts/%s" .id)
+    "date" .date
+    "content" .description
+    "summary" .description
+    "section" "posts"
+    "tags" (slice)
+  -}}
+  {{- $index = $index | append $entry -}}
+{{- end -}}
+{{- $index | jsonify -}}

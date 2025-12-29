@@ -1,0 +1,415 @@
+{{ define "main" }}
+<div class="posts">
+  <!-- Page Header -->
+  <div style="text-align: center; margin-bottom: 2.5rem;">
+    <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: #f5f5f5; font-weight: 600;">Search</h1>
+    <p style="color: #888; font-size: 0.95rem;">
+      Find posts, projects, and content across the site
+    </p>
+  </div>
+
+  <!-- Search Box -->
+  <div style="max-width: 600px; margin: 0 auto 2.5rem auto;">
+    <div style="position: relative;">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Type to search..."
+        autocomplete="off"
+        style="
+          width: 100%;
+          padding: 1rem 1.25rem 1rem 3rem;
+          font-size: 1rem;
+          background: #252525;
+          border: 1px solid #333;
+          border-radius: 8px;
+          color: #f5f5f5;
+          outline: none;
+          transition: all 0.2s ease;
+          box-sizing: border-box;
+        "
+      />
+      <svg id="search-icon" style="
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        color: #666;
+      " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <!-- Loading spinner (hidden by default) -->
+      <div id="search-spinner" style="
+        display: none;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        border: 2px solid #333;
+        border-top-color: #da7756;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      "></div>
+    </div>
+
+    <!-- Search Hint -->
+    <p style="text-align: center; color: #555; font-size: 0.85rem; margin-top: 1rem;">
+      Press <kbd style="background: #333; padding: 2px 8px; border-radius: 4px; font-family: monospace;">/</kbd> to focus search
+    </p>
+  </div>
+
+  <!-- Search Results -->
+  <div id="search-results" style="max-width: 800px; margin: 0 auto;"></div>
+
+  <!-- No Results Message (hidden by default) -->
+  <div id="no-results" style="display: none; text-align: center; padding: 3rem 0;">
+    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+    <p style="color: #888; font-size: 1rem;" id="no-results-text">No results found</p>
+    <p style="color: #555; font-size: 0.9rem;">Try different keywords or check your spelling</p>
+  </div>
+
+  <!-- Initial State -->
+  <div id="search-initial" style="text-align: center; padding: 2rem 0;">
+    <div style="
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      max-width: 500px;
+    ">
+      <span style="color: #666; font-size: 0.9rem; width: 100%; margin-bottom: 0.5rem;">Popular topics:</span>
+      <a href="/tags/terraform" class="search-tag" style="
+        padding: 8px 16px;
+        background: #252525;
+        border: 1px solid #3a3a3a;
+        color: #999;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+      ">Terraform</a>
+      <a href="/tags/aws" class="search-tag" style="
+        padding: 8px 16px;
+        background: #252525;
+        border: 1px solid #3a3a3a;
+        color: #999;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+      ">AWS</a>
+      <a href="/tags/kubernetes" class="search-tag" style="
+        padding: 8px 16px;
+        background: #252525;
+        border: 1px solid #3a3a3a;
+        color: #999;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+      ">Kubernetes</a>
+      <a href="/tags/devops" class="search-tag" style="
+        padding: 8px 16px;
+        background: #252525;
+        border: 1px solid #3a3a3a;
+        color: #999;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+      ">DevOps</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes spin {
+    to { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  #search-input:focus {
+    border-color: #da7756;
+  }
+
+  #search-input::placeholder {
+    color: #555;
+  }
+
+  .search-tag:hover {
+    border-color: #da7756;
+    color: #da7756;
+  }
+
+  .search-result-item {
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    background: #252525;
+    transition: all 0.2s ease;
+  }
+
+  .search-result-item:hover {
+    border-color: #444;
+    background: #2a2a2a;
+  }
+
+  .search-result-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .search-result-item h3 a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .search-result-item h3 a:hover {
+    color: #da7756;
+  }
+
+  .search-result-item p {
+    color: #888;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+  }
+
+  .search-result-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .search-result-section {
+    padding: 2px 8px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+  }
+
+  .search-result-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .search-result-tags a {
+    padding: 2px 8px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    color: #888;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .search-result-tags a:hover {
+    border-color: #da7756;
+    color: #da7756;
+  }
+
+  mark {
+    background: rgba(218, 119, 86, 0.3);
+    color: #f5f5f5;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+</style>
+
+<!-- Fuse.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+
+<script>
+  let fuse = null;
+  let searchIndex = [];
+
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const noResults = document.getElementById('no-results');
+  const noResultsText = document.getElementById('no-results-text');
+  const searchInitial = document.getElementById('search-initial');
+  const searchSpinner = document.getElementById('search-spinner');
+
+  // Load search index
+  async function loadSearchIndex() {
+    try {
+      const response = await fetch('/index.json');
+      searchIndex = await response.json();
+
+      // Initialize Fuse.js
+      const options = {
+        keys: [
+          { name: 'title', weight: 0.4 },
+          { name: 'summary', weight: 0.3 },
+          { name: 'content', weight: 0.2 },
+          { name: 'tags', weight: 0.1 }
+        ],
+        threshold: 0.3,
+        ignoreLocation: true,
+        includeMatches: true,
+        minMatchCharLength: 2
+      };
+
+      fuse = new Fuse(searchIndex, options);
+      console.log('Search index loaded:', searchIndex.length, 'items');
+    } catch (error) {
+      console.error('Failed to load search index:', error);
+    }
+  }
+
+  // Highlight matching text
+  function highlightMatch(text, indices) {
+    if (!indices || indices.length === 0) return text;
+
+    let result = '';
+    let lastIndex = 0;
+
+    indices.forEach(([start, end]) => {
+      result += text.slice(lastIndex, start);
+      result += `<mark>${text.slice(start, end + 1)}</mark>`;
+      lastIndex = end + 1;
+    });
+
+    result += text.slice(lastIndex);
+    return result;
+  }
+
+  // Perform search
+  function performSearch(query) {
+    if (!fuse) {
+      searchResults.innerHTML = '<p style="color: #888; text-align: center;">Loading search index...</p>';
+      return;
+    }
+
+    const results = fuse.search(query.trim());
+
+    if (results.length === 0) {
+      searchResults.innerHTML = '';
+      noResultsText.innerHTML = `No results found for "<strong style="color: #da7756;">${query}</strong>"`;
+      noResults.style.display = 'block';
+      return;
+    }
+
+    noResults.style.display = 'none';
+
+    const html = results.slice(0, 10).map(result => {
+      const item = result.item;
+
+      // Find title match for highlighting
+      let title = item.title;
+      const titleMatch = result.matches?.find(m => m.key === 'title');
+      if (titleMatch) {
+        title = highlightMatch(item.title, titleMatch.indices);
+      }
+
+      // Build tags HTML
+      let tagsHtml = '';
+      if (item.tags && item.tags.length > 0) {
+        tagsHtml = `
+          <div class="search-result-tags">
+            ${item.tags.map(tag => `<a href="/tags/${tag.toLowerCase()}/">#${tag}</a>`).join('')}
+          </div>
+        `;
+      }
+
+      return `
+        <div class="search-result-item">
+          <div class="search-result-meta">
+            <span class="search-result-section">${item.section || 'page'}</span>
+            ${item.date ? `<span>${item.date}</span>` : ''}
+          </div>
+          <h3><a href="${item.url}">${title}</a></h3>
+          <p>${item.summary || ''}</p>
+          ${tagsHtml}
+        </div>
+      `;
+    }).join('');
+
+    searchResults.innerHTML = html;
+
+    if (results.length > 10) {
+      searchResults.innerHTML += `
+        <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 1.5rem;">
+          Showing 10 of ${results.length} results
+        </p>
+      `;
+    }
+  }
+
+  // Debounce function
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Event listeners
+  const debouncedSearch = debounce((query) => {
+    searchSpinner.style.display = 'none';
+    performSearch(query);
+  }, 300);
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.trim();
+
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      noResults.style.display = 'none';
+      searchInitial.style.display = 'block';
+      searchSpinner.style.display = 'none';
+      return;
+    }
+
+    if (query.length < 2) {
+      searchResults.innerHTML = '<p style="color: #666; text-align: center; font-size: 0.9rem;">Type at least 2 characters to search...</p>';
+      noResults.style.display = 'none';
+      searchInitial.style.display = 'none';
+      return;
+    }
+
+    searchInitial.style.display = 'none';
+    searchSpinner.style.display = 'block';
+    debouncedSearch(query);
+  });
+
+  // Focus search on "/" key press
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+      e.preventDefault();
+      searchInput.focus();
+    }
+    // Clear on Escape
+    if (e.key === 'Escape' && document.activeElement === searchInput) {
+      searchInput.value = '';
+      searchInput.blur();
+      searchResults.innerHTML = '';
+      noResults.style.display = 'none';
+      searchInitial.style.display = 'block';
+    }
+  });
+
+  // Load index on page load
+  loadSearchIndex();
+</script>
+
+{{ end }}

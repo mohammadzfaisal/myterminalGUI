@@ -1,0 +1,161 @@
+{{ define "main" }}
+<div class="posts">
+  <!-- Page Header -->
+  <div style="text-align: center; margin-bottom: 2.5rem;">
+    <div style="margin-bottom: 0.75rem;">
+      <span style="
+        display: inline-block;
+        padding: 4px 12px;
+        background: #252525;
+        border: 1px solid #3a3a3a;
+        color: #888;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      ">Tag</span>
+    </div>
+    <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: #f5f5f5; font-weight: 600;">#{{ .Title }}</h1>
+    <p style="color: #888; font-size: 0.95rem;">
+      {{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} tagged with "{{ .Title }}"
+    </p>
+  </div>
+
+  {{ with .Content }}
+    <div class="index-content" style="margin-bottom: 2rem;">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  <!-- Posts List -->
+  {{ if .Pages }}
+  <div style="max-width: 800px; margin: 0 auto;">
+    {{ range .Paginator.Pages }}
+    <article class="tag-post" style="
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      background: #252525;
+      transition: all 0.2s ease;
+    ">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h2 style="margin: 0; font-size: 1.1rem;">
+          <a href="{{ .Permalink }}" style="color: #f5f5f5; text-decoration: none; transition: color 0.2s;">
+            {{ .Title | markdownify }}
+          </a>
+        </h2>
+        {{- if .Date -}}
+        <time style="color: #666; font-size: 0.85rem;">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time>
+        {{- end -}}
+      </div>
+
+      {{ if .Description }}
+      <p style="color: #888; line-height: 1.6; margin: 0.75rem 0; font-size: 0.9rem;">
+        {{ .Description | markdownify }}
+      </p>
+      {{ else if .Summary }}
+      <p style="color: #888; line-height: 1.6; margin: 0.75rem 0; font-size: 0.9rem;">
+        {{ .Summary | truncate 150 }}
+      </p>
+      {{ end }}
+
+      <!-- Other Tags -->
+      {{ if .Params.tags }}
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+        {{ range .Params.tags }}
+        <a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}" style="
+          padding: 3px 10px;
+          background: #1e1e1e;
+          border: 1px solid #333;
+          color: #888;
+          border-radius: 4px;
+          font-size: 0.75rem;
+          text-decoration: none;
+          transition: all 0.2s ease;
+        " class="post-tag">#{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <a href="{{ .Permalink }}" style="
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        color: #888;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+      " class="read-more-link">
+        Read more <span>→</span>
+      </a>
+    </article>
+    {{ end }}
+  </div>
+
+  <!-- Pagination -->
+  {{ partial "pagination.html" . }}
+
+  {{ else }}
+  <div style="text-align: center; padding: 3rem 0;">
+    <p style="color: #888;">No posts found with this tag.</p>
+  </div>
+  {{ end }}
+
+  <!-- Back to Tags -->
+  <div style="text-align: center; margin-top: 2.5rem;">
+    <a href="/tags" style="
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid #444;
+      color: #888;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    " class="back-btn">
+      <span>←</span>
+      All Tags
+    </a>
+  </div>
+</div>
+
+<style>
+  .tag-post:hover {
+    border-color: #444;
+    background: #2a2a2a;
+  }
+
+  .tag-post:hover h2 a {
+    color: #da7756 !important;
+  }
+
+  .post-tag:hover {
+    border-color: #da7756;
+    color: #da7756;
+  }
+
+  .read-more-link:hover {
+    color: #da7756;
+  }
+
+  .back-btn:hover {
+    border-color: #666;
+    color: #ccc;
+  }
+
+  @media (max-width: 768px) {
+    .tag-post {
+      padding: 1rem !important;
+    }
+  }
+</style>
+
+{{ end }}

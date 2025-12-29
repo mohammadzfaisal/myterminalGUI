@@ -1,0 +1,27 @@
+<ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      {{ range $.Site.Menus.main }}
+        {{ if not .HasChildren }}
+          <li><a href="{{ .URL }}" class="mobile-menu-link">{{ .Name }}</a></li>
+        {{ end }}
+      {{ end }}
+      <li><a href="/search" class="mobile-menu-link">SEARCH</a></li>
+    </ul>
+  </li>
+</ul>
+
+<style>
+  .menu--mobile .menu__trigger:hover,
+  .menu--mobile:hover .menu__trigger {
+    color: #da7756 !important;
+  }
+
+  .mobile-menu-link:hover,
+  .menu__dropdown a:hover,
+  .menu--mobile a:hover,
+  .menu a:hover {
+    color: #da7756 !important;
+  }
+</style>

@@ -1,0 +1,13 @@
+baseurl = "/"
+title = "Mohammad Faisal"
+languageCode = "en-us"
+theme = "minimal"
+pagination.pagerSize = 10
+
+[params]
+  description = "Cloud Engineer | AWS Gen AI Developer"
+  author = "Mohammad Faisal"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
