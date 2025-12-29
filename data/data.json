@@ -79,6 +79,72 @@
       "description": "My first step into the world of automation."
     }
   ],
+  "about_services": [
+    {
+      "title": "Cloud Infrastructure",
+      "description": "Design and implement scalable, secure cloud architectures on AWS with high availability and cost optimization."
+    },
+    {
+      "title": "DevOps Automation",
+      "description": "Build CI/CD pipelines, implement GitOps workflows, and automate infrastructure with Terraform and Kubernetes."
+    },
+    {
+      "title": "Technical Writing",
+      "description": "Create comprehensive tutorials, documentation, and blog posts about cloud technologies and DevOps practices."
+    }
+  ],
+  "about_certifications": [
+    {
+      "title": "Solutions Architect Associate",
+      "provider": "Amazon Web Services",
+      "year": "2024",
+      "group": "Cloud Certifications"
+    },
+    {
+      "title": "Terraform Associate (003)",
+      "provider": "HashiCorp",
+      "year": "2023",
+      "group": "Infrastructure Certifications"
+    },
+    {
+      "title": "Application Developer (CKAD)",
+      "provider": "Cloud Native Computing Foundation",
+      "year": "2024",
+      "group": "Infrastructure Certifications"
+    }
+  ],
+  "about_skills": [
+    {
+      "category": "AWS Services",
+      "skills": "EC2, S3, Lambda, ECS, EKS, RDS, DynamoDB, CloudFormation",
+      "group": "Infrastructure & Cloud"
+    },
+    {
+      "category": "Infrastructure as Code",
+      "skills": "Terraform, AWS CDK, CloudFormation, Pulumi",
+      "group": "Infrastructure & Cloud"
+    },
+    {
+      "category": "Container Orchestration",
+      "skills": "Kubernetes, Docker, Helm, EKS, ECS Fargate",
+      "group": "Development & Deployment"
+    },
+    {
+      "category": "CI/CD & GitOps",
+      "skills": "GitHub Actions, GitLab CI, ArgoCD, Jenkins, AWS CodePipeline",
+      "group": "Development & Deployment"
+    },
+    {
+      "category": "Monitoring & Logging",
+      "skills": "CloudWatch, Prometheus, Grafana, ELK Stack, Datadog",
+      "group": "Operations & Reliability"
+    },
+    {
+      "category": "Scripting & Programming",
+      "skills": "Python, Bash, Go, JavaScript, YAML",
+      "group": "Operations & Reliability"
+    }
+  ],
   "aws_challenge": [
     {
       "day": "001",
