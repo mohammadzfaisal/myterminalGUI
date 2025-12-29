@@ -79,21 +79,10 @@ collections:
           - {label: "Description", name: "description", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown", required: false}
 
-  # About - What I Do
+  # About Sections
   - name: "about_sections"
     label: "About Sections"
     files:
-      - name: "services"
-        label: "What I Do"
-        file: "data/data.json"
-        fields:
-          - label: "Services"
-            name: "about_services"
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-
       - name: "certifications"
         label: "Certifications"
         file: "data/data.json"
