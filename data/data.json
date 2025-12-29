@@ -9,9 +9,18 @@
       "github": "https://github.com/mohammadzfaisal/multi-region-vpc",
       "demo": "",
       "badges": [
-        { "name": "AWS", "color": "#ff9900" },
-        { "name": "Terraform", "color": "#7b42bc" },
-        { "name": "Live", "color": "#50fa7b" }
+        {
+          "name": "AWS",
+          "color": "#ff9900"
+        },
+        {
+          "name": "Terraform",
+          "color": "#7b42bc"
+        },
+        {
+          "name": "Live",
+          "color": "#50fa7b"
+        }
       ]
     },
     {
@@ -23,9 +32,18 @@
       "github": "https://github.com/mohammadzfaisal/eks-automation",
       "demo": "",
       "badges": [
-        { "name": "Kubernetes", "color": "#326ce5" },
-        { "name": "Terraform", "color": "#7b42bc" },
-        { "name": "Helm", "color": "#0f1689" }
+        {
+          "name": "Kubernetes",
+          "color": "#326ce5"
+        },
+        {
+          "name": "Terraform",
+          "color": "#7b42bc"
+        },
+        {
+          "name": "Helm",
+          "color": "#0f1689"
+        }
       ]
     },
     {
@@ -37,9 +55,18 @@
       "github": "https://github.com/mohammadzfaisal/serverless-api",
       "demo": "https://api.example.com",
       "badges": [
-        { "name": "AWS Lambda", "color": "#ff9900" },
-        { "name": "Python", "color": "#3776ab" },
-        { "name": "API", "color": "#50fa7b" }
+        {
+          "name": "AWS Lambda",
+          "color": "#ff9900"
+        },
+        {
+          "name": "Python",
+          "color": "#3776ab"
+        },
+        {
+          "name": "API",
+          "color": "#50fa7b"
+        }
       ]
     }
   ],
@@ -53,105 +80,505 @@
     }
   ],
   "aws_challenge": [
-    { "day": "001", "title": "WHY 100 DAYS OF AWS?", "status": "completed" },
-    { "day": "002", "title": "AWS ACCOUNT SETUP", "status": "completed" },
-    { "day": "003", "title": "IAM FUNDAMENTALS", "status": "In Progress" },
-    { "day": "004", "title": "IAM POLICIES & ROLES", "status": "locked" },
-    { "day": "005", "title": "AWS CLI SETUP", "status": "In Progress" },
-    { "day": "006", "title": "S3 BASICS", "status": "locked" },
-    { "day": "007", "title": "S3 ADVANCED", "status": "locked" },
-    { "day": "008", "title": "EC2 FUNDAMENTALS", "status": "locked" },
-    { "day": "009", "title": "EC2 INSTANCE TYPES", "status": "locked" },
-    { "day": "010", "title": "SECURITY GROUPS", "status": "locked" },
-    { "day": "011", "title": "EBS VOLUMES", "status": "locked" },
-    { "day": "012", "title": "AMI & SNAPSHOTS", "status": "locked" },
-    { "day": "013", "title": "ELASTIC IPS", "status": "locked" },
-    { "day": "014", "title": "VPC BASICS", "status": "locked" },
-    { "day": "015", "title": "SUBNETS & ROUTING", "status": "locked" },
-    { "day": "016", "title": "NAT & INTERNET GW", "status": "locked" },
-    { "day": "017", "title": "VPC PEERING", "status": "locked" },
-    { "day": "018", "title": "ROUTE 53 BASICS", "status": "locked" },
-    { "day": "019", "title": "DNS ROUTING POLICIES", "status": "locked" },
-    { "day": "020", "title": "LOAD BALANCERS", "status": "locked" },
-    { "day": "021", "title": "ALB VS NLB", "status": "locked" },
-    { "day": "022", "title": "AUTO SCALING", "status": "locked" },
-    { "day": "023", "title": "LAUNCH TEMPLATES", "status": "locked" },
-    { "day": "024", "title": "RDS BASICS", "status": "locked" },
-    { "day": "025", "title": "RDS MULTI-AZ", "status": "locked" },
-    { "day": "026", "title": "AURORA", "status": "locked" },
-    { "day": "027", "title": "DYNAMODB BASICS", "status": "locked" },
-    { "day": "028", "title": "DYNAMODB ADVANCED", "status": "locked" },
-    { "day": "029", "title": "ELASTICACHE", "status": "locked" },
-    { "day": "030", "title": "LAMBDA BASICS", "status": "locked" },
-    { "day": "031", "title": "LAMBDA TRIGGERS", "status": "locked" },
-    { "day": "032", "title": "API GATEWAY", "status": "locked" },
-    { "day": "033", "title": "STEP FUNCTIONS", "status": "locked" },
-    { "day": "034", "title": "SQS BASICS", "status": "locked" },
-    { "day": "035", "title": "SNS BASICS", "status": "locked" },
-    { "day": "036", "title": "EVENTBRIDGE", "status": "locked" },
-    { "day": "037", "title": "CLOUDWATCH LOGS", "status": "locked" },
-    { "day": "038", "title": "CLOUDWATCH METRICS", "status": "locked" },
-    { "day": "039", "title": "CLOUDWATCH ALARMS", "status": "locked" },
-    { "day": "040", "title": "CLOUDTRAIL", "status": "locked" },
-    { "day": "041", "title": "AWS CONFIG", "status": "locked" },
-    { "day": "042", "title": "SECRETS MANAGER", "status": "locked" },
-    { "day": "043", "title": "PARAMETER STORE", "status": "locked" },
-    { "day": "044", "title": "KMS ENCRYPTION", "status": "locked" },
-    { "day": "045", "title": "CLOUDFORMATION BASICS", "status": "locked" },
-    { "day": "046", "title": "CF TEMPLATES", "status": "locked" },
-    { "day": "047", "title": "CF STACKS", "status": "locked" },
-    { "day": "048", "title": "SAM FRAMEWORK", "status": "locked" },
-    { "day": "049", "title": "CDK INTRO", "status": "locked" },
-    { "day": "050", "title": "TERRAFORM + AWS", "status": "locked" },
-    { "day": "051", "title": "ECS BASICS", "status": "locked" },
-    { "day": "052", "title": "ECS TASKS & SERVICES", "status": "locked" },
-    { "day": "053", "title": "ECR", "status": "locked" },
-    { "day": "054", "title": "EKS BASICS", "status": "locked" },
-    { "day": "055", "title": "EKS NODE GROUPS", "status": "locked" },
-    { "day": "056", "title": "FARGATE", "status": "locked" },
-    { "day": "057", "title": "CODEPIPELINE", "status": "locked" },
-    { "day": "058", "title": "CODEBUILD", "status": "locked" },
-    { "day": "059", "title": "CODEDEPLOY", "status": "locked" },
-    { "day": "060", "title": "CODECOMMIT", "status": "locked" },
-    { "day": "061", "title": "ELASTIC BEANSTALK", "status": "locked" },
-    { "day": "062", "title": "AMPLIFY", "status": "locked" },
-    { "day": "063", "title": "CLOUDFRONT", "status": "locked" },
-    { "day": "064", "title": "WAF & SHIELD", "status": "locked" },
-    { "day": "065", "title": "COGNITO", "status": "locked" },
-    { "day": "066", "title": "SES", "status": "locked" },
-    { "day": "067", "title": "KINESIS", "status": "locked" },
-    { "day": "068", "title": "GLUE", "status": "locked" },
-    { "day": "069", "title": "ATHENA", "status": "locked" },
-    { "day": "070", "title": "REDSHIFT", "status": "locked" },
-    { "day": "071", "title": "QUICKSIGHT", "status": "locked" },
-    { "day": "072", "title": "SAGEMAKER BASICS", "status": "locked" },
-    { "day": "073", "title": "BEDROCK INTRO", "status": "locked" },
-    { "day": "074", "title": "BEDROCK AGENTS", "status": "locked" },
-    { "day": "075", "title": "LEX CHATBOTS", "status": "locked" },
-    { "day": "076", "title": "REKOGNITION", "status": "locked" },
-    { "day": "077", "title": "TRANSCRIBE", "status": "locked" },
-    { "day": "078", "title": "POLLY", "status": "locked" },
-    { "day": "079", "title": "TRANSLATE", "status": "locked" },
-    { "day": "080", "title": "COMPREHEND", "status": "locked" },
-    { "day": "081", "title": "COST EXPLORER", "status": "locked" },
-    { "day": "082", "title": "BUDGETS", "status": "locked" },
-    { "day": "083", "title": "TRUSTED ADVISOR", "status": "locked" },
-    { "day": "084", "title": "WELL-ARCHITECTED", "status": "locked" },
-    { "day": "085", "title": "ORGANIZATIONS", "status": "locked" },
-    { "day": "086", "title": "CONTROL TOWER", "status": "locked" },
-    { "day": "087", "title": "SERVICE CATALOG", "status": "locked" },
-    { "day": "088", "title": "SYSTEMS MANAGER", "status": "locked" },
-    { "day": "089", "title": "SSM PATCH MANAGER", "status": "locked" },
-    { "day": "090", "title": "SSM SESSION MANAGER", "status": "locked" },
-    { "day": "091", "title": "BACKUP", "status": "locked" },
-    { "day": "092", "title": "DISASTER RECOVERY", "status": "locked" },
-    { "day": "093", "title": "MULTI-REGION ARCH", "status": "locked" },
-    { "day": "094", "title": "GLOBAL ACCELERATOR", "status": "locked" },
-    { "day": "095", "title": "OUTPOSTS", "status": "locked" },
-    { "day": "096", "title": "WAVELENGTH", "status": "locked" },
-    { "day": "097", "title": "LOCAL ZONES", "status": "locked" },
-    { "day": "098", "title": "EXAM PREP SAA", "status": "locked" },
-    { "day": "099", "title": "PRACTICE TESTS", "status": "locked" },
-    { "day": "100", "title": "FINAL PROJECT", "status": "locked" }
+    {
+      "day": "001",
+      "title": "WHY 100 DAYS OF AWS?",
+      "status": "In Progress"
+    },
+    {
+      "day": "002",
+      "title": "AWS ACCOUNT SETUP",
+      "status": "In Progress"
+    },
+    {
+      "day": "003",
+      "title": "IAM FUNDAMENTALS",
+      "status": "In Progress"
+    },
+    {
+      "day": "004",
+      "title": "IAM POLICIES & ROLES",
+      "status": "locked"
+    },
+    {
+      "day": "005",
+      "title": "AWS CLI SETUP",
+      "status": "In Progress"
+    },
+    {
+      "day": "006",
+      "title": "S3 BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "007",
+      "title": "S3 ADVANCED",
+      "status": "locked"
+    },
+    {
+      "day": "008",
+      "title": "EC2 FUNDAMENTALS",
+      "status": "locked"
+    },
+    {
+      "day": "009",
+      "title": "EC2 INSTANCE TYPES",
+      "status": "locked"
+    },
+    {
+      "day": "010",
+      "title": "SECURITY GROUPS",
+      "status": "locked"
+    },
+    {
+      "day": "011",
+      "title": "EBS VOLUMES",
+      "status": "locked"
+    },
+    {
+      "day": "012",
+      "title": "AMI & SNAPSHOTS",
+      "status": "locked"
+    },
+    {
+      "day": "013",
+      "title": "ELASTIC IPS",
+      "status": "locked"
+    },
+    {
+      "day": "014",
+      "title": "VPC BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "015",
+      "title": "SUBNETS & ROUTING",
+      "status": "locked"
+    },
+    {
+      "day": "016",
+      "title": "NAT & INTERNET GW",
+      "status": "locked"
+    },
+    {
+      "day": "017",
+      "title": "VPC PEERING",
+      "status": "locked"
+    },
+    {
+      "day": "018",
+      "title": "ROUTE 53 BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "019",
+      "title": "DNS ROUTING POLICIES",
+      "status": "locked"
+    },
+    {
+      "day": "020",
+      "title": "LOAD BALANCERS",
+      "status": "locked"
+    },
+    {
+      "day": "021",
+      "title": "ALB VS NLB",
+      "status": "locked"
+    },
+    {
+      "day": "022",
+      "title": "AUTO SCALING",
+      "status": "locked"
+    },
+    {
+      "day": "023",
+      "title": "LAUNCH TEMPLATES",
+      "status": "locked"
+    },
+    {
+      "day": "024",
+      "title": "RDS BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "025",
+      "title": "RDS MULTI-AZ",
+      "status": "locked"
+    },
+    {
+      "day": "026",
+      "title": "AURORA",
+      "status": "locked"
+    },
+    {
+      "day": "027",
+      "title": "DYNAMODB BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "028",
+      "title": "DYNAMODB ADVANCED",
+      "status": "locked"
+    },
+    {
+      "day": "029",
+      "title": "ELASTICACHE",
+      "status": "locked"
+    },
+    {
+      "day": "030",
+      "title": "LAMBDA BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "031",
+      "title": "LAMBDA TRIGGERS",
+      "status": "locked"
+    },
+    {
+      "day": "032",
+      "title": "API GATEWAY",
+      "status": "locked"
+    },
+    {
+      "day": "033",
+      "title": "STEP FUNCTIONS",
+      "status": "locked"
+    },
+    {
+      "day": "034",
+      "title": "SQS BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "035",
+      "title": "SNS BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "036",
+      "title": "EVENTBRIDGE",
+      "status": "locked"
+    },
+    {
+      "day": "037",
+      "title": "CLOUDWATCH LOGS",
+      "status": "locked"
+    },
+    {
+      "day": "038",
+      "title": "CLOUDWATCH METRICS",
+      "status": "locked"
+    },
+    {
+      "day": "039",
+      "title": "CLOUDWATCH ALARMS",
+      "status": "locked"
+    },
+    {
+      "day": "040",
+      "title": "CLOUDTRAIL",
+      "status": "locked"
+    },
+    {
+      "day": "041",
+      "title": "AWS CONFIG",
+      "status": "locked"
+    },
+    {
+      "day": "042",
+      "title": "SECRETS MANAGER",
+      "status": "locked"
+    },
+    {
+      "day": "043",
+      "title": "PARAMETER STORE",
+      "status": "locked"
+    },
+    {
+      "day": "044",
+      "title": "KMS ENCRYPTION",
+      "status": "locked"
+    },
+    {
+      "day": "045",
+      "title": "CLOUDFORMATION BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "046",
+      "title": "CF TEMPLATES",
+      "status": "locked"
+    },
+    {
+      "day": "047",
+      "title": "CF STACKS",
+      "status": "locked"
+    },
+    {
+      "day": "048",
+      "title": "SAM FRAMEWORK",
+      "status": "locked"
+    },
+    {
+      "day": "049",
+      "title": "CDK INTRO",
+      "status": "locked"
+    },
+    {
+      "day": "050",
+      "title": "TERRAFORM + AWS",
+      "status": "locked"
+    },
+    {
+      "day": "051",
+      "title": "ECS BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "052",
+      "title": "ECS TASKS & SERVICES",
+      "status": "locked"
+    },
+    {
+      "day": "053",
+      "title": "ECR",
+      "status": "locked"
+    },
+    {
+      "day": "054",
+      "title": "EKS BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "055",
+      "title": "EKS NODE GROUPS",
+      "status": "locked"
+    },
+    {
+      "day": "056",
+      "title": "FARGATE",
+      "status": "locked"
+    },
+    {
+      "day": "057",
+      "title": "CODEPIPELINE",
+      "status": "locked"
+    },
+    {
+      "day": "058",
+      "title": "CODEBUILD",
+      "status": "locked"
+    },
+    {
+      "day": "059",
+      "title": "CODEDEPLOY",
+      "status": "locked"
+    },
+    {
+      "day": "060",
+      "title": "CODECOMMIT",
+      "status": "locked"
+    },
+    {
+      "day": "061",
+      "title": "ELASTIC BEANSTALK",
+      "status": "locked"
+    },
+    {
+      "day": "062",
+      "title": "AMPLIFY",
+      "status": "locked"
+    },
+    {
+      "day": "063",
+      "title": "CLOUDFRONT",
+      "status": "locked"
+    },
+    {
+      "day": "064",
+      "title": "WAF & SHIELD",
+      "status": "locked"
+    },
+    {
+      "day": "065",
+      "title": "COGNITO",
+      "status": "locked"
+    },
+    {
+      "day": "066",
+      "title": "SES",
+      "status": "locked"
+    },
+    {
+      "day": "067",
+      "title": "KINESIS",
+      "status": "locked"
+    },
+    {
+      "day": "068",
+      "title": "GLUE",
+      "status": "locked"
+    },
+    {
+      "day": "069",
+      "title": "ATHENA",
+      "status": "locked"
+    },
+    {
+      "day": "070",
+      "title": "REDSHIFT",
+      "status": "locked"
+    },
+    {
+      "day": "071",
+      "title": "QUICKSIGHT",
+      "status": "locked"
+    },
+    {
+      "day": "072",
+      "title": "SAGEMAKER BASICS",
+      "status": "locked"
+    },
+    {
+      "day": "073",
+      "title": "BEDROCK INTRO",
+      "status": "locked"
+    },
+    {
+      "day": "074",
+      "title": "BEDROCK AGENTS",
+      "status": "locked"
+    },
+    {
+      "day": "075",
+      "title": "LEX CHATBOTS",
+      "status": "locked"
+    },
+    {
+      "day": "076",
+      "title": "REKOGNITION",
+      "status": "locked"
+    },
+    {
+      "day": "077",
+      "title": "TRANSCRIBE",
+      "status": "locked"
+    },
+    {
+      "day": "078",
+      "title": "POLLY",
+      "status": "locked"
+    },
+    {
+      "day": "079",
+      "title": "TRANSLATE",
+      "status": "locked"
+    },
+    {
+      "day": "080",
+      "title": "COMPREHEND",
+      "status": "locked"
+    },
+    {
+      "day": "081",
+      "title": "COST EXPLORER",
+      "status": "locked"
+    },
+    {
+      "day": "082",
+      "title": "BUDGETS",
+      "status": "locked"
+    },
+    {
+      "day": "083",
+      "title": "TRUSTED ADVISOR",
+      "status": "locked"
+    },
+    {
+      "day": "084",
+      "title": "WELL-ARCHITECTED",
+      "status": "locked"
+    },
+    {
+      "day": "085",
+      "title": "ORGANIZATIONS",
+      "status": "locked"
+    },
+    {
+      "day": "086",
+      "title": "CONTROL TOWER",
+      "status": "locked"
+    },
+    {
+      "day": "087",
+      "title": "SERVICE CATALOG",
+      "status": "locked"
+    },
+    {
+      "day": "088",
+      "title": "SYSTEMS MANAGER",
+      "status": "locked"
+    },
+    {
+      "day": "089",
+      "title": "SSM PATCH MANAGER",
+      "status": "locked"
+    },
+    {
+      "day": "090",
+      "title": "SSM SESSION MANAGER",
+      "status": "locked"
+    },
+    {
+      "day": "091",
+      "title": "BACKUP",
+      "status": "locked"
+    },
+    {
+      "day": "092",
+      "title": "DISASTER RECOVERY",
+      "status": "locked"
+    },
+    {
+      "day": "093",
+      "title": "MULTI-REGION ARCH",
+      "status": "locked"
+    },
+    {
+      "day": "094",
+      "title": "GLOBAL ACCELERATOR",
+      "status": "locked"
+    },
+    {
+      "day": "095",
+      "title": "OUTPOSTS",
+      "status": "locked"
+    },
+    {
+      "day": "096",
+      "title": "WAVELENGTH",
+      "status": "locked"
+    },
+    {
+      "day": "097",
+      "title": "LOCAL ZONES",
+      "status": "locked"
+    },
+    {
+      "day": "098",
+      "title": "EXAM PREP SAA",
+      "status": "locked"
+    },
+    {
+      "day": "099",
+      "title": "PRACTICE TESTS",
+      "status": "locked"
+    },
+    {
+      "day": "100",
+      "title": "FINAL PROJECT",
+      "status": "locked"
+    }
   ]
 }
