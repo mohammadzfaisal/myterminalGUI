@@ -144,17 +144,17 @@
     {
       "day": "001",
       "title": "WHY 100 DAYS OF AWS?",
-      "status": "completed"
+      "status": "locked"
     },
     {
       "day": "002",
       "title": "AWS ACCOUNT SETUP",
-      "status": "completed"
+      "status": "locked"
     },
     {
       "day": "003",
       "title": "IAM FUNDAMENTALS",
-      "status": "in_progress"
+      "status": "locked"
     },
     {
       "day": "004",
