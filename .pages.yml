@@ -112,7 +112,7 @@ content:
               values:  # <-- This is the key you were missing!
                 - value: completed
                   label: Completed
-                - value: in_progress
+                - value: in progress
                   label: In Progress
                 - value: locked
                   label: Locked
