@@ -1,0 +1,225 @@
+# Pages CMS Configuration
+# Repository: mohammadzfaisal/myterminalGUI
+
+# Media configuration
+media:
+  input: static/images
+  output: /images
+
+# Content collections
+content:
+  # AWS Challenge Manager
+  - name: challenge
+    label: Challenge Manager
+    type: file
+    path: data/data.json
+    format: json
+    fields:
+      - name: aws_challenge
+        label: Challenge Items
+        type: object
+        list: true
+        fields:
+          - name: day
+            label: Day
+            type: string
+            required: true
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: status
+            label: Status
+            type: select
+            options:
+              - completed
+              - In Progress
+              - locked
+            required: true
+
+  # Projects Manager
+  - name: projects
+    label: Projects
+    type: file
+    path: data/data.json
+    format: json
+    fields:
+      - name: projects
+        label: Projects
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: description
+            label: Description
+            type: text
+            required: true
+          - name: icon
+            label: Icon
+            type: string
+            required: false
+          - name: github
+            label: GitHub URL
+            type: string
+            required: true
+          - name: demo
+            label: Demo URL
+            type: string
+            required: false
+          - name: featured
+            label: Featured
+            type: boolean
+            required: true
+          - name: badges
+            label: Badges
+            type: object
+            list: true
+            fields:
+              - name: name
+                label: Name
+                type: string
+                required: true
+              - name: color
+                label: Color
+                type: string
+                required: true
+
+  # Blog Posts Manager
+  - name: blogs
+    label: Blog Posts
+    type: file
+    path: data/data.json
+    format: json
+    fields:
+      - name: blogs
+        label: Blog Posts
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: date
+            label: Date
+            type: date
+            required: true
+          - name: category
+            label: Category
+            type: string
+            required: true
+          - name: description
+            label: Description
+            type: text
+            required: true
+
+  # About Page Services
+  - name: about_services
+    label: What I Do
+    type: file
+    path: data/data.json
+    format: json
+    fields:
+      - name: about_services
+        label: Services
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: description
+            label: Description
+            type: text
+            required: true
+
+  # About Page Certifications
+  - name: about_certifications
+    label: Certifications
+    type: file
+    path: data/data.json
+    format: json
+    fields:
+      - name: about_certifications
+        label: Certifications
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: provider
+            label: Provider
+            type: string
+            required: true
+          - name: year
+            label: Year
+            type: string
+            required: true
+          - name: group
+            label: Group
+            type: string
+            required: true
+
+  # About Page Skills
+  - name: about_skills
+    label: Skills
+    type: file
+    path: data/data.json
+    format: json
+    fields:
+      - name: about_skills
+        label: Skills
+        type: object
+        list: true
+        fields:
+          - name: category
+            label: Category
+            type: string
+            required: true
+          - name: skills
+            label: Skills
+            type: string
+            required: true
+          - name: group
+            label: Group
+            type: string
+            required: true
+
+  # About Page Content
+  - name: about
+    label: About Page
+    type: file
+    path: content/about/_index.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: string
+        required: true
+      - name: body
+        label: Body
+        type: rich-text
+        required: false
+
+# Global settings
+settings:
+  content:
+    merge: true  # Preserve fields not listed in config when saving
