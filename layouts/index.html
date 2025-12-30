@@ -148,6 +148,7 @@
         {{ if .featured }}
         <article class="project-card-home" style="
           border: 1px solid #333;
+          border-left: 3px solid #da7756;
           border-radius: 8px;
           background: #252525;
           transition: all 0.2s ease;
@@ -259,8 +260,11 @@
 
     /* Project Card Hover Effects */
     .project-card-home:hover {
-      border-color: #444;
+      border-color: #555;
+      border-left-color: #da7756;
       background: #2a2a2a;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
     }
 
     .project-btn:hover {
