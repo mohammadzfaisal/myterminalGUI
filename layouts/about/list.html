@@ -110,14 +110,13 @@
           <div class="timeline-node" style="position: absolute; left: 32px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: #252525; border: 3px solid #da7756; z-index: 2;"></div>
           <div style="position: absolute; left: 43px; top: 16px; width: 37px; height: 2px; background: #3a3a3a;"></div>
 
-          <div class="cert-card-timeline" style="background: #252525; border: 1px solid #333; border-radius: 8px; padding: 0.625rem 1rem; transition: all 0.2s ease; display: flex; align-items: center; justify-content: space-between;">
-            <div class="cert-info">
-              <p class="cert-title" style="margin: 0; color: #f5f5f5; font-weight: 500; font-size: 0.95rem;">{{ $cert.title }}</p>
-              <p class="cert-provider" style="margin: 0; color: #666; font-size: 0.8rem;">{{ $cert.provider }}</p>
-              <p class="cert-year" style="margin: 0.125rem 0 0 0; color: #777; font-size: 0.75rem; font-style: italic;">{{ $cert.year }}</p>
+          <div class="cert-card-timeline" style="background: #252525; border: 1px solid #333; border-radius: 8px; padding: 0.5rem 0.875rem; transition: all 0.2s ease; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+            <div class="cert-info" style="flex: 1; min-width: 0;">
+              <p class="cert-title" style="margin: 0; color: #f5f5f5; font-weight: 500; font-size: 0.875rem;">{{ $cert.title }}</p>
+              <p class="cert-provider" style="margin: 0.125rem 0 0 0; color: #666; font-size: 0.75rem;">{{ $cert.provider }} • {{ $cert.year }}</p>
             </div>
-            <span class="verified-badge" style="color: #6bc46a; font-size: 0.75rem; font-weight: 500; display: flex; align-items: center; gap: 0.25rem;">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <span class="verified-badge" style="color: #6bc46a; font-size: 0.7rem; font-weight: 500; display: flex; align-items: center; gap: 0.25rem; flex-shrink: 0;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
               </svg>
               Verified
