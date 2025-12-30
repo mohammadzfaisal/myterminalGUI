@@ -1,15 +1,3 @@
-backend:
-  name: github
-  repo: mohammadzfaisal/myterminalGUI
-  branch: main
-  # Using GitHub's OAuth - you'll need to authorize when prompted
-
-media_folder: "static/images"
-public_folder: "/images"
-
-# Optional: Enable editorial workflow for draft/review/ready states
-# publish_mode: editorial_workflow
-
 collections:
   # ==========================================
   # Challenge Manager
