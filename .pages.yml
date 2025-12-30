@@ -1,0 +1,84 @@
+backend:
+  name: github
+  repo: mohammadzfaisal/myterminalGUI
+  branch: main
+  # Using GitHub's OAuth (requires you to be logged into GitHub)
+  # You'll need to authorize the app when prompted
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  # Challenge Manager (reusable for any challenge data)
+  - name: "challenge"
+    label: "Challenge Manager"
+    files:
+      - name: "challenge_data"
+        label: "Challenge Progress"
+        file: "data/data.json"
+        fields:
+          - label: "Challenge Items"
+            name: "aws_challenge"
+            widget: "list"
+            fields:
+              - {label: "Day", name: "day", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Status", name: "status", widget: "select", options: ["completed", "In Progress", "locked"]}
+
+  # Projects Manager
+  - name: "projects"
+    label: "Projects"
+    files:
+      - name: "projects_data"
+        label: "Projects List"
+        file: "data/data.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Icon", name: "icon", widget: "string", required: false}
+              - {label: "GitHub URL", name: "github", widget: "string"}
+              - {label: "Demo URL", name: "demo", widget: "string", required: false}
+              - {label: "Featured", name: "featured", widget: "boolean"}
+              - label: "Badges"
+                name: "badges"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Color", name: "color", widget: "string"}
+
+  # Blog Posts Manager
+  - name: "blogs"
+    label: "Blog Posts"
+    files:
+      - name: "blogs_data"
+        label: "Blog Posts List"
+        file: "data/data.json"
+        fields:
+          - label: "Blog Posts"
+            name: "blogs"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Date", name: "date", widget: "date"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+  # About Page Manager
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "content/about/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+
+ 
