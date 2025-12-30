@@ -2,6 +2,8 @@ backend:
   name: github
   repo: mohammadzfaisal/myterminalGUI
   branch: main
+  base_url: https://mohammadzfaisal.netlify.app
+  auth_endpoint: auth
 
 media_folder: "static/images"
 public_folder: "/images"
