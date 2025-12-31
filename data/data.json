@@ -48,7 +48,6 @@
       "description": "Fully serverless API built with AWS Lambda, API Gateway, and DynamoDB. Includes CI/CD pipeline with automated testing.",
       "featured": false,
       "github": "https://github.com/mohammadzfaisal/serverless-api",
-      "demo": "",
       "badges": [
         {
           "name": "AWS Lambda",
@@ -164,7 +163,7 @@
     {
       "day": "005",
       "title": "AWS CLI SETUP",
-      "status": "completed"
+      "status": "locked"
     },
     {
       "day": "006",
@@ -650,21 +649,52 @@
       "topics": [
         {
           "name": "Linux Fundamentals",
-          "skills": ["Command line navigation", "File permissions", "Package management", "Shell scripting"],
-          "resources": ["Linux Journey", "OverTheWire Bandit"],
-          "tags": ["linux", "fundamentals"]
+          "skills": [
+            "Command line navigation",
+            "File permissions",
+            "Package management",
+            "Shell scripting"
+          ],
+          "resources": [
+            "Linux Journey",
+            "OverTheWire Bandit"
+          ],
+          "tags": [
+            "linux",
+            "fundamentals"
+          ]
         },
         {
           "name": "Networking Basics",
-          "skills": ["TCP/IP", "DNS", "HTTP/HTTPS", "Load Balancing"],
-          "resources": ["Networking for Web Developers"],
-          "tags": ["networking", "fundamentals"]
+          "skills": [
+            "TCP/IP",
+            "DNS",
+            "HTTP/HTTPS",
+            "Load Balancing"
+          ],
+          "resources": [
+            "Networking for Web Developers"
+          ],
+          "tags": [
+            "networking",
+            "fundamentals"
+          ]
         },
         {
           "name": "Git & Version Control",
-          "skills": ["Git basics", "Branching strategies", "Pull requests", "Git workflows"],
-          "resources": ["Pro Git Book"],
-          "tags": ["git", "version-control"]
+          "skills": [
+            "Git basics",
+            "Branching strategies",
+            "Pull requests",
+            "Git workflows"
+          ],
+          "resources": [
+            "Pro Git Book"
+          ],
+          "tags": [
+            "git",
+            "version-control"
+          ]
         }
       ]
     },
@@ -675,15 +705,39 @@
       "topics": [
         {
           "name": "AWS Core Services",
-          "skills": ["EC2", "S3", "VPC", "IAM", "CloudWatch"],
-          "resources": ["AWS Well-Architected Framework", "AWS Documentation"],
-          "tags": ["aws", "ec2", "s3", "vpc"]
+          "skills": [
+            "EC2",
+            "S3",
+            "VPC",
+            "IAM",
+            "CloudWatch"
+          ],
+          "resources": [
+            "AWS Well-Architected Framework",
+            "AWS Documentation"
+          ],
+          "tags": [
+            "aws",
+            "ec2",
+            "s3",
+            "vpc"
+          ]
         },
         {
           "name": "Cloud Design Patterns",
-          "skills": ["High availability", "Fault tolerance", "Scalability", "Cost optimization"],
-          "resources": ["AWS Architecture Center"],
-          "tags": ["aws", "architecture"]
+          "skills": [
+            "High availability",
+            "Fault tolerance",
+            "Scalability",
+            "Cost optimization"
+          ],
+          "resources": [
+            "AWS Architecture Center"
+          ],
+          "tags": [
+            "aws",
+            "architecture"
+          ]
         }
       ]
     },
@@ -694,15 +748,36 @@
       "topics": [
         {
           "name": "Terraform",
-          "skills": ["HCL syntax", "State management", "Modules", "Workspaces"],
-          "resources": ["Terraform Documentation", "HashiCorp Learn"],
-          "tags": ["terraform", "iac"]
+          "skills": [
+            "HCL syntax",
+            "State management",
+            "Modules",
+            "Workspaces"
+          ],
+          "resources": [
+            "Terraform Documentation",
+            "HashiCorp Learn"
+          ],
+          "tags": [
+            "terraform",
+            "iac"
+          ]
         },
         {
           "name": "AWS CDK",
-          "skills": ["CDK constructs", "CloudFormation", "Multi-stack deployments"],
-          "resources": ["AWS CDK Workshop"],
-          "tags": ["aws", "cdk", "iac"]
+          "skills": [
+            "CDK constructs",
+            "CloudFormation",
+            "Multi-stack deployments"
+          ],
+          "resources": [
+            "AWS CDK Workshop"
+          ],
+          "tags": [
+            "aws",
+            "cdk",
+            "iac"
+          ]
         }
       ]
     },
@@ -713,21 +788,54 @@
       "topics": [
         {
           "name": "Docker",
-          "skills": ["Dockerfile", "Image optimization", "Multi-stage builds", "Docker Compose"],
-          "resources": ["Docker Documentation"],
-          "tags": ["docker", "containers"]
+          "skills": [
+            "Dockerfile",
+            "Image optimization",
+            "Multi-stage builds",
+            "Docker Compose"
+          ],
+          "resources": [
+            "Docker Documentation"
+          ],
+          "tags": [
+            "docker",
+            "containers"
+          ]
         },
         {
           "name": "Kubernetes",
-          "skills": ["Pods", "Deployments", "Services", "ConfigMaps", "Secrets"],
-          "resources": ["Kubernetes Documentation", "Kubernetes The Hard Way"],
-          "tags": ["kubernetes", "k8s"]
+          "skills": [
+            "Pods",
+            "Deployments",
+            "Services",
+            "ConfigMaps",
+            "Secrets"
+          ],
+          "resources": [
+            "Kubernetes Documentation",
+            "Kubernetes The Hard Way"
+          ],
+          "tags": [
+            "kubernetes",
+            "k8s"
+          ]
         },
         {
           "name": "AWS EKS",
-          "skills": ["EKS cluster setup", "Node groups", "IRSA", "EKS networking"],
-          "resources": ["AWS EKS Workshop"],
-          "tags": ["aws", "eks", "kubernetes"]
+          "skills": [
+            "EKS cluster setup",
+            "Node groups",
+            "IRSA",
+            "EKS networking"
+          ],
+          "resources": [
+            "AWS EKS Workshop"
+          ],
+          "tags": [
+            "aws",
+            "eks",
+            "kubernetes"
+          ]
         }
       ]
     },
@@ -738,15 +846,35 @@
       "topics": [
         {
           "name": "GitHub Actions",
-          "skills": ["Workflow syntax", "Secrets management", "Matrix builds", "Reusable workflows"],
-          "resources": ["GitHub Actions Documentation"],
-          "tags": ["cicd", "github-actions"]
+          "skills": [
+            "Workflow syntax",
+            "Secrets management",
+            "Matrix builds",
+            "Reusable workflows"
+          ],
+          "resources": [
+            "GitHub Actions Documentation"
+          ],
+          "tags": [
+            "cicd",
+            "github-actions"
+          ]
         },
         {
           "name": "GitOps with ArgoCD",
-          "skills": ["ArgoCD setup", "Application sync", "Helm integration"],
-          "resources": ["ArgoCD Documentation"],
-          "tags": ["gitops", "argocd", "kubernetes"]
+          "skills": [
+            "ArgoCD setup",
+            "Application sync",
+            "Helm integration"
+          ],
+          "resources": [
+            "ArgoCD Documentation"
+          ],
+          "tags": [
+            "gitops",
+            "argocd",
+            "kubernetes"
+          ]
         }
       ]
     },
@@ -757,21 +885,54 @@
       "topics": [
         {
           "name": "AWS CloudWatch",
-          "skills": ["Metrics", "Logs", "Alarms", "Dashboards", "Insights"],
-          "resources": ["AWS CloudWatch Documentation"],
-          "tags": ["aws", "monitoring", "cloudwatch"]
+          "skills": [
+            "Metrics",
+            "Logs",
+            "Alarms",
+            "Dashboards",
+            "Insights"
+          ],
+          "resources": [
+            "AWS CloudWatch Documentation"
+          ],
+          "tags": [
+            "aws",
+            "monitoring",
+            "cloudwatch"
+          ]
         },
         {
           "name": "Prometheus & Grafana",
-          "skills": ["PromQL", "Exporters", "Alerting", "Grafana dashboards"],
-          "resources": ["Prometheus Documentation"],
-          "tags": ["prometheus", "grafana", "monitoring"]
+          "skills": [
+            "PromQL",
+            "Exporters",
+            "Alerting",
+            "Grafana dashboards"
+          ],
+          "resources": [
+            "Prometheus Documentation"
+          ],
+          "tags": [
+            "prometheus",
+            "grafana",
+            "monitoring"
+          ]
         },
         {
           "name": "ELK Stack",
-          "skills": ["Elasticsearch", "Logstash", "Kibana", "Log aggregation"],
-          "resources": ["Elastic Documentation"],
-          "tags": ["elk", "logging"]
+          "skills": [
+            "Elasticsearch",
+            "Logstash",
+            "Kibana",
+            "Log aggregation"
+          ],
+          "resources": [
+            "Elastic Documentation"
+          ],
+          "tags": [
+            "elk",
+            "logging"
+          ]
         }
       ]
     },
@@ -782,15 +943,37 @@
       "topics": [
         {
           "name": "Serverless with AWS Lambda",
-          "skills": ["Lambda functions", "Event-driven architecture", "API Gateway", "Step Functions"],
-          "resources": ["Serverless Framework", "AWS SAM"],
-          "tags": ["aws", "lambda", "serverless"]
+          "skills": [
+            "Lambda functions",
+            "Event-driven architecture",
+            "API Gateway",
+            "Step Functions"
+          ],
+          "resources": [
+            "Serverless Framework",
+            "AWS SAM"
+          ],
+          "tags": [
+            "aws",
+            "lambda",
+            "serverless"
+          ]
         },
         {
           "name": "Service Mesh",
-          "skills": ["Istio basics", "Traffic management", "Security policies"],
-          "resources": ["Istio Documentation"],
-          "tags": ["istio", "service-mesh", "kubernetes"]
+          "skills": [
+            "Istio basics",
+            "Traffic management",
+            "Security policies"
+          ],
+          "resources": [
+            "Istio Documentation"
+          ],
+          "tags": [
+            "istio",
+            "service-mesh",
+            "kubernetes"
+          ]
         }
       ]
     },
@@ -801,21 +984,49 @@
       "topics": [
         {
           "name": "Platform Engineering",
-          "skills": ["Internal developer platforms", "Self-service infrastructure", "Developer experience"],
-          "resources": ["Platform Engineering resources"],
-          "tags": ["platform-engineering"]
+          "skills": [
+            "Internal developer platforms",
+            "Self-service infrastructure",
+            "Developer experience"
+          ],
+          "resources": [
+            "Platform Engineering resources"
+          ],
+          "tags": [
+            "platform-engineering"
+          ]
         },
         {
           "name": "Site Reliability Engineering",
-          "skills": ["SLOs/SLIs", "Error budgets", "Incident management", "Chaos engineering"],
-          "resources": ["Google SRE Book"],
-          "tags": ["sre", "reliability"]
+          "skills": [
+            "SLOs/SLIs",
+            "Error budgets",
+            "Incident management",
+            "Chaos engineering"
+          ],
+          "resources": [
+            "Google SRE Book"
+          ],
+          "tags": [
+            "sre",
+            "reliability"
+          ]
         },
         {
           "name": "Cloud Security",
-          "skills": ["IAM best practices", "Secrets management", "Compliance", "Security scanning"],
-          "resources": ["AWS Security Best Practices"],
-          "tags": ["security", "aws"]
+          "skills": [
+            "IAM best practices",
+            "Secrets management",
+            "Compliance",
+            "Security scanning"
+          ],
+          "resources": [
+            "AWS Security Best Practices"
+          ],
+          "tags": [
+            "security",
+            "aws"
+          ]
         }
       ]
     }
