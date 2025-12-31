@@ -206,6 +206,50 @@ content:
         label: Body
         type: rich-text
 
+  # Cloud Roadmap Manager
+  - name: roadmap
+    label: Cloud Roadmap
+    type: file
+    path: data/data.json
+    format: json
+    view:
+      primary: title
+    fields:
+      - name: cloud_roadmap
+        label: Roadmap Phases
+        type: object
+        list: true
+        fields:
+          - name: phase
+            label: Phase Number
+            type: number
+          - name: title
+            label: Phase Title
+            type: string
+          - name: description
+            label: Phase Description
+            type: text
+          - name: topics
+            label: Topics
+            type: object
+            list: true
+            fields:
+              - name: name
+                label: Topic Name
+                type: string
+              - name: skills
+                label: Skills
+                type: string
+                list: true
+              - name: resources
+                label: Learning Resources
+                type: string
+                list: true
+              - name: tags
+                label: Tags (for blog post matching)
+                type: string
+                list: true
+
 # Global settings
 settings:
   content:
