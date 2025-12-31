@@ -48,7 +48,7 @@
       "description": "Fully serverless API built with AWS Lambda, API Gateway, and DynamoDB. Includes CI/CD pipeline with automated testing.",
       "featured": false,
       "github": "https://github.com/mohammadzfaisal/serverless-api",
-      "demo": "https://api.example.com",
+      "demo": "",
       "badges": [
         {
           "name": "AWS Lambda",
@@ -67,11 +67,11 @@
   ],
   "blogs": [
     {
-      "id": "terraform-guide",
-      "title": "Starting the DevOps Journey",
-      "date": "2025-12-26",
-      "category": "General",
-      "description": "My first step into the world of automation."
+      "id": "terraform-getting-started",
+      "title": "Getting Started with Terraform for AWS Infrastructure",
+      "date": "2025-12-30",
+      "category": "Infrastructure as Code",
+      "description": "Learn how to use Terraform to provision and manage AWS infrastructure as code"
     }
   ],
   "about_services": [
@@ -640,6 +640,184 @@
       "day": "100",
       "title": "FINAL PROJECT",
       "status": "locked"
+    }
+  ],
+  "cloud_roadmap": [
+    {
+      "phase": 1,
+      "title": "Foundations",
+      "description": "Essential fundamentals for cloud engineering",
+      "topics": [
+        {
+          "name": "Linux Fundamentals",
+          "skills": ["Command line navigation", "File permissions", "Package management", "Shell scripting"],
+          "resources": ["Linux Journey", "OverTheWire Bandit"],
+          "tags": ["linux", "fundamentals"]
+        },
+        {
+          "name": "Networking Basics",
+          "skills": ["TCP/IP", "DNS", "HTTP/HTTPS", "Load Balancing"],
+          "resources": ["Networking for Web Developers"],
+          "tags": ["networking", "fundamentals"]
+        },
+        {
+          "name": "Git & Version Control",
+          "skills": ["Git basics", "Branching strategies", "Pull requests", "Git workflows"],
+          "resources": ["Pro Git Book"],
+          "tags": ["git", "version-control"]
+        }
+      ]
+    },
+    {
+      "phase": 2,
+      "title": "Cloud Fundamentals",
+      "description": "Master AWS core services and cloud concepts",
+      "topics": [
+        {
+          "name": "AWS Core Services",
+          "skills": ["EC2", "S3", "VPC", "IAM", "CloudWatch"],
+          "resources": ["AWS Well-Architected Framework", "AWS Documentation"],
+          "tags": ["aws", "ec2", "s3", "vpc"]
+        },
+        {
+          "name": "Cloud Design Patterns",
+          "skills": ["High availability", "Fault tolerance", "Scalability", "Cost optimization"],
+          "resources": ["AWS Architecture Center"],
+          "tags": ["aws", "architecture"]
+        }
+      ]
+    },
+    {
+      "phase": 3,
+      "title": "Infrastructure as Code",
+      "description": "Automate infrastructure provisioning and management",
+      "topics": [
+        {
+          "name": "Terraform",
+          "skills": ["HCL syntax", "State management", "Modules", "Workspaces"],
+          "resources": ["Terraform Documentation", "HashiCorp Learn"],
+          "tags": ["terraform", "iac"]
+        },
+        {
+          "name": "AWS CDK",
+          "skills": ["CDK constructs", "CloudFormation", "Multi-stack deployments"],
+          "resources": ["AWS CDK Workshop"],
+          "tags": ["aws", "cdk", "iac"]
+        }
+      ]
+    },
+    {
+      "phase": 4,
+      "title": "Containers & Orchestration",
+      "description": "Master containerization and Kubernetes",
+      "topics": [
+        {
+          "name": "Docker",
+          "skills": ["Dockerfile", "Image optimization", "Multi-stage builds", "Docker Compose"],
+          "resources": ["Docker Documentation"],
+          "tags": ["docker", "containers"]
+        },
+        {
+          "name": "Kubernetes",
+          "skills": ["Pods", "Deployments", "Services", "ConfigMaps", "Secrets"],
+          "resources": ["Kubernetes Documentation", "Kubernetes The Hard Way"],
+          "tags": ["kubernetes", "k8s"]
+        },
+        {
+          "name": "AWS EKS",
+          "skills": ["EKS cluster setup", "Node groups", "IRSA", "EKS networking"],
+          "resources": ["AWS EKS Workshop"],
+          "tags": ["aws", "eks", "kubernetes"]
+        }
+      ]
+    },
+    {
+      "phase": 5,
+      "title": "CI/CD & Automation",
+      "description": "Build automated deployment pipelines",
+      "topics": [
+        {
+          "name": "GitHub Actions",
+          "skills": ["Workflow syntax", "Secrets management", "Matrix builds", "Reusable workflows"],
+          "resources": ["GitHub Actions Documentation"],
+          "tags": ["cicd", "github-actions"]
+        },
+        {
+          "name": "GitOps with ArgoCD",
+          "skills": ["ArgoCD setup", "Application sync", "Helm integration"],
+          "resources": ["ArgoCD Documentation"],
+          "tags": ["gitops", "argocd", "kubernetes"]
+        }
+      ]
+    },
+    {
+      "phase": 6,
+      "title": "Monitoring & Observability",
+      "description": "Implement comprehensive monitoring solutions",
+      "topics": [
+        {
+          "name": "AWS CloudWatch",
+          "skills": ["Metrics", "Logs", "Alarms", "Dashboards", "Insights"],
+          "resources": ["AWS CloudWatch Documentation"],
+          "tags": ["aws", "monitoring", "cloudwatch"]
+        },
+        {
+          "name": "Prometheus & Grafana",
+          "skills": ["PromQL", "Exporters", "Alerting", "Grafana dashboards"],
+          "resources": ["Prometheus Documentation"],
+          "tags": ["prometheus", "grafana", "monitoring"]
+        },
+        {
+          "name": "ELK Stack",
+          "skills": ["Elasticsearch", "Logstash", "Kibana", "Log aggregation"],
+          "resources": ["Elastic Documentation"],
+          "tags": ["elk", "logging"]
+        }
+      ]
+    },
+    {
+      "phase": 7,
+      "title": "Advanced Cloud Topics",
+      "description": "Dive into serverless and advanced architectures",
+      "topics": [
+        {
+          "name": "Serverless with AWS Lambda",
+          "skills": ["Lambda functions", "Event-driven architecture", "API Gateway", "Step Functions"],
+          "resources": ["Serverless Framework", "AWS SAM"],
+          "tags": ["aws", "lambda", "serverless"]
+        },
+        {
+          "name": "Service Mesh",
+          "skills": ["Istio basics", "Traffic management", "Security policies"],
+          "resources": ["Istio Documentation"],
+          "tags": ["istio", "service-mesh", "kubernetes"]
+        }
+      ]
+    },
+    {
+      "phase": 8,
+      "title": "Specialization Paths",
+      "description": "Choose your cloud engineering specialization",
+      "topics": [
+        {
+          "name": "Platform Engineering",
+          "skills": ["Internal developer platforms", "Self-service infrastructure", "Developer experience"],
+          "resources": ["Platform Engineering resources"],
+          "tags": ["platform-engineering"]
+        },
+        {
+          "name": "Site Reliability Engineering",
+          "skills": ["SLOs/SLIs", "Error budgets", "Incident management", "Chaos engineering"],
+          "resources": ["Google SRE Book"],
+          "tags": ["sre", "reliability"]
+        },
+        {
+          "name": "Cloud Security",
+          "skills": ["IAM best practices", "Secrets management", "Compliance", "Security scanning"],
+          "resources": ["AWS Security Best Practices"],
+          "tags": ["security", "aws"]
+        }
+      ]
     }
   ]
 }

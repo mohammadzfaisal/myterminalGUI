@@ -1,0 +1,121 @@
+{{ define "main" }}
+<article class="post">
+  <h1 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  </h1>
+  <div class="post-meta">
+    {{- if .Date -}}
+      <time class="post-date">
+        {{- partial "post-date" . -}}
+        {{- if and $.Site.Params.showLastUpdated .Lastmod -}}
+          &nbsp;{{- partial "post-lastmod" . -}}
+        {{- end -}}
+      </time>
+    {{- end -}}
+    {{- with .Params.Author -}}
+      <span class="post-author">{{ . }}</span>
+    {{- end -}}
+    {{- if and (.Param "readingTime") (eq (.Param "readingTime") true) -}}
+      <span class="post-reading-time">{{ .ReadingTime }} {{ $.Site.Params.minuteReadingTime | default "min read" }} ({{ .WordCount }} {{ $.Site.Params.words | default "words" }})</span>
+    {{- end -}}
+  </div>
+
+  {{ if .Params.tags }}
+    <span class="post-tags">
+      {{ range .Params.tags }}
+      #<a href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
+      {{ end }}
+    </span>
+  {{ end }}
+  {{ partial "cover.html" . }}
+
+  {{ if (.Params.Toc | default .Site.Params.Toc) }}
+    <div class="table-of-contents">
+      <h2>
+        {{ (.Params.TocTitle | default .Site.Params.TocTitle) | default "Table of Contents" }}
+      </h2>
+      {{ .TableOfContents }}
+    </div>
+  {{ end }}
+
+  <div class="post-content">
+    {{- with .Content -}}
+      <div>
+        {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor">#</a> ${3}` | safeHTML }}
+      </div>
+    {{- end -}}
+  </div>
+
+  {{/* Related Roadmap Topics Section */}}
+  {{ $postTags := .Params.tags }}
+  {{ $data := .Site.Data.data }}
+  {{ $relatedTopics := slice }}
+  {{ $relatedPhases := slice }}
+
+  {{/* Find roadmap topics matching blog post tags */}}
+  {{ range $data.cloud_roadmap }}
+    {{ $phase := . }}
+    {{ range .topics }}
+      {{ $topic := . }}
+      {{ range .tags }}
+        {{ $roadmapTag := . }}
+        {{ range $postTags }}
+          {{ if eq . $roadmapTag }}
+            {{ $relatedTopics = $relatedTopics | append $topic }}
+            {{ $relatedPhases = $relatedPhases | append $phase }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if gt (len $relatedTopics) 0 }}
+  <div class="roadmap-navigation" style="margin: 3rem 0; padding: 1.5rem; background: #252525; border: 1px solid #333; border-radius: 8px;">
+    <h3 style="margin: 0 0 1rem 0; color: #f5f5f5; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+      </svg>
+      Related Roadmap Topics
+    </h3>
+    <p style="margin: 0 0 1rem 0; color: #888; font-size: 0.9rem;">
+      This post relates to topics in the <a href="/roadmap/" style="color: #da7756; text-decoration: none;">Cloud Engineering Roadmap</a>
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+      {{ range $index, $topic := $relatedTopics }}
+      {{ $phase := index $relatedPhases $index }}
+      <div style="padding: 0.75rem; background: #2a2a2a; border-left: 3px solid #da7756; border-radius: 4px;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+          <span style="
+            background: #da7756;
+            color: #fff;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 600;
+          ">
+            Phase {{ $phase.phase }}
+          </span>
+          <div style="color: #f5f5f5; font-weight: 500;">{{ $topic.name }}</div>
+        </div>
+        <div style="color: #888; font-size: 0.85rem;">
+          {{ delimit $topic.skills ", " }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <a href="/roadmap/" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: #da7756; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.9rem; transition: all 0.2s ease;">
+      View Full Roadmap →
+    </a>
+  </div>
+  {{ end }}
+
+  {{ if eq .Type $.Site.Params.contentTypeName }}
+    {{ partial "posts_pagination.html" . }}
+  {{ end }}
+
+  {{ if not (.Params.hideComments | default false) }}
+    {{ partial "comments.html" . }}
+  {{ end }}
+</article>
+{{ end }}

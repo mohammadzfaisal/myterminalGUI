@@ -126,6 +126,11 @@ tag = "tags"
           url = "/projects"
           weight = 4
         [[languages.en.menu.main]]
+          identifier = "roadmap"
+          name = "ROADMAP"
+          url = "/roadmap"
+          weight = 4.5
+        [[languages.en.menu.main]]
           identifier = "challenge"
           name = "100 DAYS"
           url = "/challenge"

@@ -1,0 +1,182 @@
+{{ define "main" }}
+{{ $data := .Site.Data.data }}
+<div class="posts">
+
+  <!-- Roadmap Hero Section -->
+  <section style="margin-bottom: 3rem; text-align: center;">
+    <h1 style="font-size: 2rem; margin-bottom: 0.75rem; color: #f5f5f5; font-weight: 600;">{{ .Title }}</h1>
+    <p style="color: #888; font-size: 1rem; max-width: 600px; margin: 0 auto;">
+      {{ .Description }}
+    </p>
+  </section>
+
+  <!-- Roadmap Content -->
+  {{ if .Content }}
+  <div style="max-width: 680px; margin: 0 auto 3rem auto; color: #888; line-height: 1.6; font-size: 0.9rem; text-align: center;">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
+  <!-- Roadmap Phases -->
+  <section style="max-width: 900px; margin: 0 auto;">
+    {{ range $index, $phase := $data.cloud_roadmap }}
+    <!-- Phase Card -->
+    <div class="roadmap-phase" style="margin-bottom: 1.5rem;">
+      <!-- Phase Header (clickable) -->
+      <div
+        class="phase-header"
+        onclick="togglePhase({{ $phase.phase }})"
+        style="
+          background: #252525;
+          border: 1px solid #333;
+          border-radius: 8px;
+          padding: 1.25rem 1.5rem;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+        "
+        onmouseover="this.style.borderColor='#444'; this.style.background='#2a2a2a';"
+        onmouseout="this.style.borderColor='#333'; this.style.background='#252525';"
+      >
+        <!-- Left side: Phase number + Title + Description -->
+        <div style="flex: 1; min-width: 0;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+            <!-- Phase Number Badge -->
+            <div style="
+              background: #da7756;
+              color: #fff;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: 600;
+              font-size: 1rem;
+              flex-shrink: 0;
+            ">
+              {{ $phase.phase }}
+            </div>
+            <!-- Phase Title -->
+            <h2 style="margin: 0; color: #f5f5f5; font-size: 1.2rem; font-weight: 600;">{{ $phase.title }}</h2>
+          </div>
+          <!-- Phase Description -->
+          <p style="margin: 0 0 0 56px; color: #888; font-size: 0.9rem;">{{ $phase.description }}</p>
+        </div>
+
+        <!-- Right side: Expand/Collapse Icon -->
+        <div class="expand-icon" id="expand-icon-{{ $phase.phase }}" style="
+          color: #da7756;
+          font-size: 1.5rem;
+          transition: transform 0.2s ease;
+          flex-shrink: 0;
+        ">
+          ▼
+        </div>
+      </div>
+
+      <!-- Phase Topics (collapsible content) -->
+      <div
+        id="phase-content-{{ $phase.phase }}"
+        class="phase-content"
+        style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        "
+      >
+        <div style="padding: 1.5rem; background: #1a1a1a; border: 1px solid #333; border-top: none; border-radius: 0 0 8px 8px;">
+          <!-- Topics Grid -->
+          <div style="display: grid; gap: 1.25rem;">
+            {{ range $topicIndex, $topic := $phase.topics }}
+            <!-- Topic Card -->
+            <div style="
+              background: #252525;
+              border: 1px solid #2a2a2a;
+              border-left: 3px solid #da7756;
+              border-radius: 6px;
+              padding: 1.25rem;
+            ">
+              <!-- Topic Name -->
+              <h3 style="margin: 0 0 0.75rem 0; color: #f5f5f5; font-size: 1.05rem; font-weight: 600;">
+                {{ $topic.name }}
+              </h3>
+
+              <!-- Skills -->
+              <div style="margin-bottom: 1rem;">
+                <div style="font-size: 0.8rem; color: #da7756; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; font-weight: 500;">
+                  Skills to Learn
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                  {{ range $topic.skills }}
+                  <span style="
+                    background: #2a2a2a;
+                    color: #bbb;
+                    padding: 0.35rem 0.75rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                    border: 1px solid #333;
+                  ">
+                    {{ . }}
+                  </span>
+                  {{ end }}
+                </div>
+              </div>
+
+              <!-- Resources -->
+              {{ if $topic.resources }}
+              <div>
+                <div style="font-size: 0.8rem; color: #da7756; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; font-weight: 500;">
+                  Learning Resources
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                  {{ range $topic.resources }}
+                  <span style="
+                    color: #888;
+                    font-size: 0.85rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                  ">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    {{ . }}
+                  </span>
+                  {{ end }}
+                </div>
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </section>
+
+  <!-- JavaScript for Expand/Collapse -->
+  <script>
+    function togglePhase(phaseNumber) {
+      const content = document.getElementById(`phase-content-${phaseNumber}`);
+      const icon = document.getElementById(`expand-icon-${phaseNumber}`);
+
+      if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Collapse
+        content.style.maxHeight = '0';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        // Expand
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
+
+</div>
+{{ end }}

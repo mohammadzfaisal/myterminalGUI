@@ -17,3 +17,6 @@ nul
 
 # Dependencies
 node_modules/
+
+# Documentation (local only)
+docs/

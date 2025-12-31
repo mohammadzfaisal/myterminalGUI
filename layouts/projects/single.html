@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="post">
+  <!-- Project Header -->
+  <header style="margin-bottom: 2.5rem;">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+
+  <!-- Project Content -->
+  <article class="post-content" style="max-width: 800px; margin: 0 auto;">
+    {{ .Content }}
+  </article>
+
+  <!-- Back to Projects Button -->
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333; text-align: center;">
+    <a href="/projects/" style="
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid #444;
+      color: #888;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    " onmouseover="this.style.borderColor='#da7756'; this.style.color='#da7756'; this.style.background='rgba(218, 119, 86, 0.1)';" onmouseout="this.style.borderColor='#444'; this.style.color='#888'; this.style.background='transparent';">
+      ← Back to All Projects
+    </a>
+  </div>
+</div>
+{{ end }}

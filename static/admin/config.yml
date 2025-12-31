@@ -2,8 +2,8 @@ backend:
   name: github
   repo: mohammadzfaisal/myterminalGUI
   branch: main
-  base_url: https://mohammadzfaisal.netlify.app
-  auth_endpoint: auth
+  # Using GitHub's OAuth (requires you to be logged into GitHub)
+  # You'll need to authorize the app when prompted
 
 media_folder: "static/images"
 public_folder: "/images"
