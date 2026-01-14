@@ -142,8 +142,8 @@
   "aws_challenge": [
     {
       "day": "001",
-      "title": "WHY 100 DAYS OF AWS?",
-      "status": "locked"
+      "title": "Create Key Pair ",
+      "status": "completed"
     },
     {
       "day": "002",
